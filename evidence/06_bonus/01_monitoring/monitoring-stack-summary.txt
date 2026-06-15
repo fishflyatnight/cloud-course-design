@@ -1,0 +1,16 @@
+﻿PS> helm list -n monitoring
+
+
+PS> kubectl get pods -n monitoring -o wide
+
+NAME                                                     READY            STATUS    NODE
+alertmanager-monitoring-kube-prometheus-alertmanager-0   true,true        Running   192.168.0.221
+monitoring-grafana-bbfcd5bb7-hgpg6                       true,true,true   Running   192.168.0.14
+monitoring-kube-prometheus-operator-f858b577d-bkhbc      true             Running   192.168.0.221
+monitoring-prometheus-node-exporter-s8fqz                true             Running   192.168.0.221
+monitoring-prometheus-node-exporter-zb7bl                true             Running   192.168.0.14
+prometheus-monitoring-kube-prometheus-prometheus-0       true,true        Running   192.168.0.221
+
+PS> kubectl get servicemonitors,prometheusrules -n monitoring
+
+Monitoring custom resources found: 47

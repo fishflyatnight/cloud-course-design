@@ -1,0 +1,119 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mnist-ddp-master
+  namespace: ai-bonus
+spec:
+  clusterIP: None
+  selector:
+    app: mnist-ddp
+    ddp-rank: "0"
+  ports:
+    - name: rendezvous
+      port: 29500
+      targetPort: 29500
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mnist-ddp-rank0
+  namespace: ai-bonus
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        app: mnist-ddp
+        ddp-rank: "0"
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: swr-pull-secret
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: mnist-ddp
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - name: trainer
+          image: swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1
+          imagePullPolicy: Always
+          args:
+            - python
+            - /app/train_mnist.py
+            - --mode
+            - ddp
+            - --epochs
+            - "2"
+          env:
+            - name: MASTER_ADDR
+              value: mnist-ddp-master.ai-bonus.svc.cluster.local
+            - name: MASTER_PORT
+              value: "29500"
+            - name: WORLD_SIZE
+              value: "2"
+            - name: RANK
+              value: "0"
+          ports:
+            - containerPort: 29500
+              name: rendezvous
+          resources:
+            requests:
+              cpu: 200m
+              memory: 768Mi
+            limits:
+              cpu: "1"
+              memory: 2Gi
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mnist-ddp-rank1
+  namespace: ai-bonus
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        app: mnist-ddp
+        ddp-rank: "1"
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: swr-pull-secret
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: mnist-ddp
+              topologyKey: kubernetes.io/hostname
+      containers:
+        - name: trainer
+          image: swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1
+          imagePullPolicy: Always
+          args:
+            - python
+            - /app/train_mnist.py
+            - --mode
+            - ddp
+            - --epochs
+            - "2"
+          env:
+            - name: MASTER_ADDR
+              value: mnist-ddp-master.ai-bonus.svc.cluster.local
+            - name: MASTER_PORT
+              value: "29500"
+            - name: WORLD_SIZE
+              value: "2"
+            - name: RANK
+              value: "1"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 768Mi
+            limits:
+              cpu: "1"
+              memory: 2Gi

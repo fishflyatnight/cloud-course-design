@@ -1,0 +1,7 @@
+﻿NAME                        STATUS     COMPLETIONS   DURATION   AGE   CONTAINERS   IMAGES                                                            SELECTOR
+job.batch/mnist-ddp-rank0   Complete   1/1           22s        40s   trainer      swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1   batch.kubernetes.io/controller-uid=f0e263e1-e54c-4c5b-bf9b-d1a28fae3180
+job.batch/mnist-ddp-rank1   Complete   1/1           22s        40s   trainer      swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1   batch.kubernetes.io/controller-uid=8717587e-ebaf-413c-88fb-2726c1e65d8c
+
+NAME                        READY   STATUS      RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+pod/mnist-ddp-rank0-6pg8c   0/1     Completed   0          40s   10.0.0.33    192.168.0.14    <none>           <none>
+pod/mnist-ddp-rank1-84szp   0/1     Completed   0          40s   10.0.0.155   192.168.0.221   <none>           <none>

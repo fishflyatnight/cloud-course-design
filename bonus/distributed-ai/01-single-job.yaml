@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mnist-single
+  namespace: ai-bonus
+spec:
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        app: mnist-single
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: swr-pull-secret
+      containers:
+        - name: trainer
+          image: swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1
+          imagePullPolicy: Always
+          args:
+            - python
+            - /app/train_mnist.py
+            - --mode
+            - single
+            - --epochs
+            - "2"
+          resources:
+            requests:
+              cpu: 200m
+              memory: 768Mi
+            limits:
+              cpu: "1"
+              memory: 2Gi

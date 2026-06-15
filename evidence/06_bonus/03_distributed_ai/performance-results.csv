@@ -1,0 +1,3 @@
+﻿mode,workers,train_seconds,accuracy,speedup,parallel_efficiency
+single,1,4.439934,0.952,1.0,1.0
+ddp,2,2.647339,0.9565,1.6771308850132152,0.8385654425066076

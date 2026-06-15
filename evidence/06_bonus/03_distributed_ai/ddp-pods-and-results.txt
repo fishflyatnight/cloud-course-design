@@ -1,0 +1,21 @@
+﻿PS> kubectl get jobs,pods -n ai-bonus -l app=mnist-ddp -o wide
+
+NAME                        STATUS     COMPLETIONS   DURATION   AGE   CONTAINERS   IMAGES                                                            SELECTOR
+job.batch/mnist-ddp-rank0   Complete   1/1           22s        92s   trainer      swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1   batch.kubernetes.io/controller-uid=f0e263e1-e54c-4c5b-bf9b-d1a28fae3180
+job.batch/mnist-ddp-rank1   Complete   1/1           22s        92s   trainer      swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1   batch.kubernetes.io/controller-uid=8717587e-ebaf-413c-88fb-2726c1e65d8c
+
+NAME                        READY   STATUS      RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+pod/mnist-ddp-rank0-6pg8c   0/1     Completed   0          92s   10.0.0.33    192.168.0.14    <none>           <none>
+pod/mnist-ddp-rank1-84szp   0/1     Completed   0          92s   10.0.0.155   192.168.0.221   <none>           <none>
+
+PS> kubectl logs job/mnist-ddp-rank0 -n ai-bonus
+
+EPOCH rank=0 epoch=1/2 local_examples=6000 local_loss=0.935116
+EPOCH rank=0 epoch=2/2 local_examples=6000 local_loss=0.138802
+RESULT mode=ddp rank=0 world_size=2 epochs=2 train_samples=12000 train_seconds=2.647339 accuracy=0.956500
+
+PS> kubectl logs job/mnist-ddp-rank1 -n ai-bonus
+
+EPOCH rank=1 epoch=1/2 local_examples=6000 local_loss=0.925740
+EPOCH rank=1 epoch=2/2 local_examples=6000 local_loss=0.134291
+RESULT mode=ddp rank=1 world_size=2 epochs=2 train_samples=12000 train_seconds=2.647388 accuracy=0.956500

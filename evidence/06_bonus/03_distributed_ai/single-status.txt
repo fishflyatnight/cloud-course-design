@@ -1,0 +1,5 @@
+﻿NAME                     STATUS     COMPLETIONS   DURATION   AGE   CONTAINERS   IMAGES                                                            SELECTOR
+job.batch/mnist-single   Complete   1/1           21s        37s   trainer      swr.cn-north-4.myhuaweicloud.com/cloud_course/distributed-ai:v1   batch.kubernetes.io/controller-uid=1bb4a038-27ea-4778-aef4-74c1e65c89b6
+
+NAME                     READY   STATUS      RESTARTS   AGE   IP          NODE           NOMINATED NODE   READINESS GATES
+pod/mnist-single-qlg4f   0/1     Completed   0          38s   10.0.0.32   192.168.0.14   <none>           <none>

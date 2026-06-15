@@ -1,0 +1,8 @@
+﻿Redis persistence - Step 1: write data
+TIME=2026-06-15 22:07:40 +08:00
+OLD_REDIS_POD=redis-65d4df6cf8-q7vrr
+PVC_VOLUME=pvc-b3faf399-2efa-42af-9aa0-963b587ad925
+PS> redis-cli SET testkey "hello"
+SET_RESULT=OK
+PS> redis-cli GET testkey
+GET_BEFORE_DELETE=hello

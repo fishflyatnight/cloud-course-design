@@ -1,0 +1,7 @@
+﻿TIME=2026-06-15 22:07:08 +08:00
+PS> kubectl get pods -n cloud-course -o wide
+
+NAME                       READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
+backend-5cd6bcf687-7xq98   1/1     Running   0          4h52m   10.0.0.26    192.168.0.14    <none>           <none>
+frontend-cc8479486-5r65g   1/1     Running   0          4h52m   10.0.0.27    192.168.0.14    <none>           <none>
+redis-65d4df6cf8-q7vrr     1/1     Running   0          9h      10.0.0.137   192.168.0.221   <none>           <none>

@@ -1,0 +1,5 @@
+﻿TIME=2026-06-15 22:07:08 +08:00
+PS> kubectl get pvc -n cloud-course -o wide
+
+NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+redis-data-pvc   Bound    pvc-b3faf399-2efa-42af-9aa0-963b587ad925   10Gi       RWO            csi-disk       <unset>                 10h   Filesystem

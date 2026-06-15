@@ -1,0 +1,12 @@
+﻿Redis persistence - Step 2: delete Pod and wait for rebuild
+TIME=2026-06-15 22:08:47 +08:00
+OLD_REDIS_POD=redis-65d4df6cf8-q7vrr
+PS> kubectl delete pod <old-redis-pod> -n cloud-course
+DELETE_RESULT=pod "redis-65d4df6cf8-q7vrr" deleted from cloud-course namespace
+NEW_REDIS_POD=redis-65d4df6cf8-qcnqk
+POD_CHANGED=True
+NEW_POD_READY=true
+PS> kubectl get pod <new-redis-pod> -n cloud-course -o wide
+
+NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE           NOMINATED NODE   READINESS GATES
+redis-65d4df6cf8-qcnqk   1/1     Running   0          43s   10.0.0.34   192.168.0.14   <none>           <none>

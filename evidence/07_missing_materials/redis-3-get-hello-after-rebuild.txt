@@ -1,0 +1,7 @@
+﻿Redis persistence - Step 3: read data after Pod rebuild
+TIME=2026-06-15 22:09:08 +08:00
+NEW_REDIS_POD=redis-65d4df6cf8-qcnqk
+PVC_VOLUME=pvc-b3faf399-2efa-42af-9aa0-963b587ad925
+PS> redis-cli GET testkey
+GET_AFTER_REBUILD=hello
+VERIFICATION=PASS: value hello survived Redis Pod deletion and rebuild

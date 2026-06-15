@@ -1,0 +1,20 @@
+# Stage 1: install dependencies without carrying pip cache into runtime.
+FROM python:3.11-slim AS builder
+
+WORKDIR /build
+COPY requirements.txt .
+RUN pip install --no-cache-dir --target /build/packages -r requirements.txt
+
+# Stage 2: copy only runtime dependencies and application code.
+FROM python:3.11-slim
+
+WORKDIR /app
+COPY --from=builder /build/packages /app/packages
+COPY app.py .
+
+ENV PYTHONPATH=/app/packages \
+    PYTHONUNBUFFERED=1
+
+EXPOSE 5000
+CMD ["python", "app.py"]
+

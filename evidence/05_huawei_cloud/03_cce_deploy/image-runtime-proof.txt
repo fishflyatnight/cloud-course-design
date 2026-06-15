@@ -1,0 +1,12 @@
+﻿=== BACKEND IMAGES ===
+NAME                       IMAGE                                                      IMAGE_ID                                                                                                                        READY   NODE
+backend-7474658948-hxjg5   swr.cn-north-4.myhuaweicloud.com/cloud_course/backend:v1   swr.cn-north-4.myhuaweicloud.com/cloud_course/backend@sha256:194406e9a49de950385b402dccd3d979f7424ad849a82a26b0ebdd8a66e8598c   true    192.168.0.14
+backend-7474658948-k4bwq   swr.cn-north-4.myhuaweicloud.com/cloud_course/backend:v1   swr.cn-north-4.myhuaweicloud.com/cloud_course/backend@sha256:194406e9a49de950385b402dccd3d979f7424ad849a82a26b0ebdd8a66e8598c   true    192.168.0.221
+
+=== FRONTEND IMAGE ===
+NAME                        IMAGE                                                       IMAGE_ID                                                                                                                         READY   NODE
+frontend-58456f7b4c-vmc86   swr.cn-north-4.myhuaweicloud.com/cloud_course/frontend:v1   swr.cn-north-4.myhuaweicloud.com/cloud_course/frontend@sha256:c0e2d9aaa35ed46c8a87c2baa55e2554bb385c61373babfb24ea1c2ac05e6c92   true    192.168.0.14
+
+=== REDIS IMAGE ===
+NAME                     IMAGE                                                    IMAGE_ID                                                                                                                      READY   NODE
+redis-65d4df6cf8-mfrrm   swr.cn-north-4.myhuaweicloud.com/cloud_course/redis:v1   swr.cn-north-4.myhuaweicloud.com/cloud_course/redis@sha256:b1addbe72465a718643cff9e60a58e6df1841e29d6d7d60c9a85d8d72f08d1a7   true    192.168.0.14

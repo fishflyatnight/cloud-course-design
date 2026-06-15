@@ -1,0 +1,40 @@
+HPA scale-down verification after pressure stopped
+
+TIME=2026-06-15 12:37:36 +08:00
+NAME                                              REFERENCE            TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/backend-hpa   Deployment/backend   cpu: 4%/60%   1         4         4          32m
+
+NAME                            READY   STATUS        RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
+pod/backend-6bb7d476fd-ccn2m    1/1     Terminating   0          15m     10.0.0.13    192.168.0.14    <none>           <none>
+pod/backend-6bb7d476fd-dq4r2    1/1     Terminating   0          9m54s   10.0.0.142   192.168.0.221   <none>           <none>
+pod/backend-6bb7d476fd-mwqb5    1/1     Terminating   0          9m54s   10.0.0.15    192.168.0.14    <none>           <none>
+pod/backend-6bb7d476fd-rvntr    1/1     Running       0          9m54s   10.0.0.141   192.168.0.221   <none>           <none>
+pod/frontend-58456f7b4c-wptfh   1/1     Running       0          22m     10.0.0.12    192.168.0.14    <none>           <none>
+pod/redis-65d4df6cf8-q7vrr      1/1     Running       0          23m     10.0.0.137   192.168.0.221   <none>           <none>
+
+Name:                                                  backend-hpa
+Namespace:                                             cloud-course
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Mon, 15 Jun 2026 12:05:26 +0800
+Reference:                                             Deployment/backend
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  4% (1m) / 60%
+Min replicas:                                          1
+Max replicas:                                          4
+Deployment pods:                                       4 current / 1 desired
+Conditions:
+  Type            Status  Reason              Message
+  ----            ------  ------              -------
+  AbleToScale     True    SucceededRescale    the HPA controller was able to update the target scale to 1
+  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
+Events:
+  Type     Reason                        Age                 From                       Message
+  ----     ------                        ----                ----                       -------
+  Warning  FailedGetResourceMetric       29m (x12 over 31m)  horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  29m (x12 over 31m)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  15m (x5 over 28m)   horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Warning  FailedGetResourceMetric       14m (x6 over 28m)   horizontal-pod-autoscaler  failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Normal   SuccessfulRescale             9m55s               horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             10s (x3 over 26m)   horizontal-pod-autoscaler  New size: 1; reason: All metrics below target

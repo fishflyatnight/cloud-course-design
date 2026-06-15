@@ -1,0 +1,4 @@
+﻿NAME                        CPU(cores)   MEMORY(bytes)   
+backend-6d546bd876-kds4z    1m           33Mi            
+frontend-6fdbfddd96-kb9f8   0m           13Mi            
+redis-79bdfd84dc-t664h      6m           3Mi             

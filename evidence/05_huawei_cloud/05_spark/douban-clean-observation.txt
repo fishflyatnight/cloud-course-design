@@ -1,0 +1,6 @@
+﻿TIME_START=2026-06-15 12:47:56 +08:00
+TIME=12:48:12 STATE=RUNNING
+POD douban-clean-cce-driver                      1/1   Running   0     13s
+POD doubandatacleaning-f3a4859ec99bacfb-exec-1   1/1   Running   0     8s
+TIME=12:48:28 STATE=COMPLETED
+POD douban-clean-cce-driver   0/1   Completed   0     29s

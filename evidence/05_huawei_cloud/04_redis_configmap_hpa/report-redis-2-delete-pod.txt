@@ -1,0 +1,5 @@
+Redis persistence verification - step 2: delete and rebuild Pod
+OLD_REDIS_POD=redis-65d4df6cf8-mfrrm
+DELETE_RESULT=pod "redis-65d4df6cf8-mfrrm" deleted from cloud-course namespace
+NEW_REDIS_POD=redis-65d4df6cf8-q7vrr
+POD_CHANGED=True

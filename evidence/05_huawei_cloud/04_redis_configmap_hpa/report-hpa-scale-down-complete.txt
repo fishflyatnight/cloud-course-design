@@ -1,0 +1,15 @@
+﻿TIME=2026-06-15 13:12:04 +08:00
+=== HPA ===
+NAME          REFERENCE            TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+backend-hpa   Deployment/backend   cpu: 4%/60%   1         4         1          66m
+
+=== BACKEND PODS ===
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+backend-6bb7d476fd-rvntr   1/1     Running   0          44m   10.0.0.141   192.168.0.221   <none>           <none>
+
+=== RECENT HPA EVENTS ===
+Min replicas:                                          1
+Max replicas:                                          4
+Deployment pods:                                       1 current / 1 desired
+  Normal   SuccessfulRescale             44m                horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target
+  Normal   SuccessfulRescale             34m (x3 over 61m)  horizontal-pod-autoscaler  New size: 1; reason: All metrics below target

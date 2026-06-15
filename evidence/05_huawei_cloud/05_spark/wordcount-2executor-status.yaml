@@ -1,0 +1,52 @@
+﻿apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"sparkoperator.k8s.io/v1beta2","kind":"SparkApplication","metadata":{"annotations":{},"name":"spark-wordcount","namespace":"default"},"spec":{"driver":{"coreRequest":"100m","cores":1,"memory":"512m","memoryOverhead":"128m","serviceAccount":"spark"},"executor":{"coreRequest":"100m","cores":1,"instances":2,"memory":"1g","memoryOverhead":"128m"},"image":"swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1","imagePullPolicy":"IfNotPresent","mainApplicationFile":"local:///opt/spark/work/wordcount.py","mode":"cluster","pythonVersion":"3","restartPolicy":{"type":"Never"},"sparkVersion":"3.4.0","type":"Python"}}
+  creationTimestamp: "2026-06-15T05:15:13Z"
+  generation: 1
+  name: spark-wordcount
+  namespace: default
+  resourceVersion: "37874"
+  uid: 9dcfd311-e689-42c7-a0a6-180cc795e637
+spec:
+  deps: {}
+  driver:
+    coreRequest: 100m
+    cores: 1
+    memory: 512m
+    memoryOverhead: 128m
+    serviceAccount: spark
+  executor:
+    coreRequest: 100m
+    cores: 1
+    instances: 2
+    memory: 1g
+    memoryOverhead: 128m
+  image: swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work/wordcount.py
+  mode: cluster
+  pythonVersion: "3"
+  restartPolicy:
+    type: Never
+  sparkVersion: 3.4.0
+  type: Python
+status:
+  applicationState:
+    state: COMPLETED
+  driverInfo:
+    podName: spark-wordcount-driver
+    webUIAddress: 10.247.210.173:4040
+    webUIPort: 4040
+    webUIServiceName: spark-wordcount-ui-svc
+  executionAttempts: 1
+  executorState:
+    cloudcoursewordcount-92657f9ec9b4a6ac-exec-1: COMPLETED
+    cloudcoursewordcount-92657f9ec9b4a6ac-exec-2: COMPLETED
+  lastSubmissionAttemptTime: "2026-06-15T05:15:13Z"
+  sparkApplicationId: spark-f91e4cbf179f44608d4e528aeac00037
+  submissionAttempts: 1
+  submissionID: 2a675f79-89bf-46f6-bcbf-b87e586c884a
+  terminationTime: "2026-06-15T05:15:31Z"

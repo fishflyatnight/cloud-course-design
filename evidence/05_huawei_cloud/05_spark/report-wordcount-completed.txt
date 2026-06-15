@@ -1,0 +1,18 @@
+﻿TIME=2026-06-15 13:16:19 +08:00
+
+NAME              SUSPEND   STATUS      ATTEMPTS   START                  FINISH                 AGE
+spark-wordcount             COMPLETED   1          2026-06-15T05:15:13Z   2026-06-15T05:15:31Z   66s
+
+NAME                     READY   STATUS      RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+spark-wordcount-driver   0/1     Completed   0          64s   10.0.0.150   192.168.0.221   <none>           <none>
+
+=== WORDCOUNT JOB START ===
+WORDCOUNT_RESULT_START
+hello	2
+spark	2
+cloud	1
+huawei	1
+kubernetes	1
+on	1
+WORDCOUNT_RESULT_END
+=== WORDCOUNT JOB COMPLETE ===

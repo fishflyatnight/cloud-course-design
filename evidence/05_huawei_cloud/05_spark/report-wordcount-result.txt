@@ -1,0 +1,10 @@
+=== WORDCOUNT JOB START ===
+WORDCOUNT_RESULT_START
+hello	2
+spark	2
+cloud	1
+huawei	1
+kubernetes	1
+on	1
+WORDCOUNT_RESULT_END
+=== WORDCOUNT JOB COMPLETE ===

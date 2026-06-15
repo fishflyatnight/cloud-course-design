@@ -1,0 +1,4 @@
+﻿NAME          TYPE           CLUSTER-IP     EXTERNAL-IP                    PORT(S)        AGE    SELECTOR
+backend-svc   LoadBalancer   10.247.8.171   123.249.121.136,192.168.0.21   80:30635/TCP   7m7s   app=backend
+NAME                ADDRESSTYPE   PORTS   ENDPOINTS   AGE
+backend-svc-kcpkb   IPv4          5000    10.0.0.9    7m8s

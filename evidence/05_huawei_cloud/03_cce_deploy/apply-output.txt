@@ -1,0 +1,9 @@
+﻿persistentvolumeclaim/redis-data-pvc created
+deployment.apps/redis created
+service/redis-svc created
+deployment.apps/backend created
+service/backend-svc created
+configmap/frontend-nginx-config created
+deployment.apps/frontend created
+service/frontend-svc created
+horizontalpodautoscaler.autoscaling/backend-hpa created

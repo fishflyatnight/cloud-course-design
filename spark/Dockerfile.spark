@@ -1,0 +1,11 @@
+ARG SPARK_BASE_IMAGE=apache/spark-py:v3.4.0
+FROM ${SPARK_BASE_IMAGE}
+
+USER root
+WORKDIR /opt/spark/work
+
+COPY spark/*.py /opt/spark/work/
+COPY data/douban_movies.csv /opt/spark/work/data/douban_movies.csv
+
+RUN chown -R 185:0 /opt/spark/work
+USER 185

@@ -1,0 +1,12 @@
+engine,executors,query,run,seconds,speedup_vs_pandas,notes
+pandas,0,genre_rating,1,0.102804100000412,1.0,Local Pandas real run; same CSV and genre query
+pyspark-cce,1,genre_rating,1,1.258931,0.08165983679837259,Huawei CCE cloud-course-cce; 1 executor(s); Spark 3.4.3
+pyspark-cce,1,year_trend,1,0.594969,,Huawei CCE cloud-course-cce; 1 executor(s); Spark 3.4.3
+pyspark-cce,1,director_top_n,1,0.55298,,Huawei CCE cloud-course-cce; 1 executor(s); Spark 3.4.3
+pyspark-cce,1,yearly_top_three,1,0.97321,,Huawei CCE cloud-course-cce; 1 executor(s); Spark 3.4.3
+pyspark-cce,1,movie_vs_genre_average,1,1.055628,,Huawei CCE cloud-course-cce; 1 executor(s); Spark 3.4.3
+pyspark-cce,2,genre_rating,1,1.35776,0.07571595863805974,Huawei CCE cloud-course-cce; 2 executor(s); Spark 3.4.3
+pyspark-cce,2,year_trend,1,0.626227,,Huawei CCE cloud-course-cce; 2 executor(s); Spark 3.4.3
+pyspark-cce,2,director_top_n,1,0.586601,,Huawei CCE cloud-course-cce; 2 executor(s); Spark 3.4.3
+pyspark-cce,2,yearly_top_three,1,1.049643,,Huawei CCE cloud-course-cce; 2 executor(s); Spark 3.4.3
+pyspark-cce,2,movie_vs_genre_average,1,1.072234,,Huawei CCE cloud-course-cce; 2 executor(s); Spark 3.4.3

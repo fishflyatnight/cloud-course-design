@@ -1,0 +1,2 @@
+﻿NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+redis-data-pvc   Bound    pvc-3910b69e-4106-49cf-93b7-4790e24cc3f5   10Gi       RWO            standard       <unset>                 18m

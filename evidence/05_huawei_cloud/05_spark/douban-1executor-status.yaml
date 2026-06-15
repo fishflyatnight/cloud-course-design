@@ -1,0 +1,56 @@
+﻿apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"sparkoperator.k8s.io/v1beta2","kind":"SparkApplication","metadata":{"annotations":{},"name":"douban-analysis-1executor","namespace":"default"},"spec":{"arguments":["--input","/opt/spark/work/data/douban_movies.csv","--format","csv"],"driver":{"coreRequest":"100m","cores":1,"memory":"1g","memoryOverhead":"256m","serviceAccount":"spark"},"executor":{"coreRequest":"100m","cores":1,"instances":1,"memory":"1g","memoryOverhead":"256m"},"image":"swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1","imagePullPolicy":"IfNotPresent","mainApplicationFile":"local:///opt/spark/work/spark_sql_analysis.py","mode":"cluster","pythonVersion":"3","restartPolicy":{"type":"Never"},"sparkVersion":"3.4.3","type":"Python"}}
+  creationTimestamp: "2026-06-15T04:49:27Z"
+  generation: 1
+  name: douban-analysis-1executor
+  namespace: default
+  resourceVersion: "30149"
+  uid: 96edd77c-e8aa-48c5-a31f-649204f7305f
+spec:
+  arguments:
+  - --input
+  - /opt/spark/work/data/douban_movies.csv
+  - --format
+  - csv
+  deps: {}
+  driver:
+    coreRequest: 100m
+    cores: 1
+    memory: 1g
+    memoryOverhead: 256m
+    serviceAccount: spark
+  executor:
+    coreRequest: 100m
+    cores: 1
+    instances: 1
+    memory: 1g
+    memoryOverhead: 256m
+  image: swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work/spark_sql_analysis.py
+  mode: cluster
+  pythonVersion: "3"
+  restartPolicy:
+    type: Never
+  sparkVersion: 3.4.3
+  type: Python
+status:
+  applicationState:
+    state: COMPLETED
+  driverInfo:
+    podName: douban-analysis-1executor-driver
+    webUIAddress: 10.247.25.230:4040
+    webUIPort: 4040
+    webUIServiceName: douban-analysis-1executor-ui-svc
+  executionAttempts: 1
+  executorState:
+    doubansparksqlanalysis-51cefd9ec99d106e-exec-1: COMPLETED
+  lastSubmissionAttemptTime: "2026-06-15T04:49:27Z"
+  sparkApplicationId: spark-79b4be0b1c5a4380b993841a3f7616c2
+  submissionAttempts: 1
+  submissionID: 16a5f4a4-ee51-4596-809e-58b7dd886768
+  terminationTime: "2026-06-15T04:49:53Z"

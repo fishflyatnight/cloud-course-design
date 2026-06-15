@@ -1,0 +1,14 @@
+﻿TIME=2026-06-15 11:54:40 +08:00
+CONTEXT=external
+CLUSTER=cloud-course-cce
+REGION=cn-north-4
+
+=== kubectl get nodes -o wide ===
+NAME            STATUS   ROLES    AGE   VERSION             INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
+192.168.0.14    Ready    <none>   54m   v1.35.3-r0-35.0.8   192.168.0.14    <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+192.168.0.221   Ready    <none>   54m   v1.35.3-r0-35.0.8   192.168.0.221   <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+
+=== kubectl version ===
+Client Version: v1.34.1
+Kustomize Version: v5.7.1
+Server Version: v1.35.3-r0-35.0.13

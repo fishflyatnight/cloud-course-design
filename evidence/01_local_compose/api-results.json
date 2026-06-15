@@ -1,0 +1,16 @@
+﻿{
+    "ping":  {
+                 "status":  "ok"
+             },
+    "redis_set":  {
+                      "key":  "testkey",
+                      "status":  "ok",
+                      "value":  "hello"
+                  },
+    "redis_get":  {
+                      "found":  true,
+                      "key":  "testkey",
+                      "status":  "ok",
+                      "value":  "hello"
+                  }
+}

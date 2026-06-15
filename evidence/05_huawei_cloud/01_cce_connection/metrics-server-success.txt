@@ -1,0 +1,17 @@
+﻿TIME=2026-06-15 12:02:35 +08:00
+=== kubectl top nodes ===
+NAME            CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
+192.168.0.14    36m          1%       1298Mi          21%         
+192.168.0.221   77m          3%       1192Mi          20%         
+
+=== kubectl top pods -A ===
+NAMESPACE     NAME                                      CPU(cores)   MEMORY(bytes)   
+kube-system   coredns-85bb9f945c-2kzw5                  1m           21Mi            
+kube-system   coredns-85bb9f945c-94zhr                  1m           23Mi            
+kube-system   everest-csi-controller-6954b7cbd9-l4wst   2m           46Mi            
+kube-system   everest-csi-controller-6954b7cbd9-lvjqc   1m           36Mi            
+kube-system   everest-csi-driver-695c2                  1m           54Mi            
+kube-system   everest-csi-driver-gtm9g                  2m           52Mi            
+kube-system   icagent-fn7tw                             12m          40Mi            
+kube-system   icagent-gjfm8                             16m          50Mi            
+kube-system   metrics-server-db94594cf-v76r5            17m          23Mi            

@@ -1,0 +1,7 @@
+engine,executors,query,run,seconds,notes
+pyspark-local,1,genre_rating,1,0.870697,"local[4], Spark 3.4.3; not CCE executor timing"
+pyspark-local,1,year_trend,1,0.350686,"local[4], Spark 3.4.3; not CCE executor timing"
+pyspark-local,1,director_top_n,1,0.477289,"local[4], Spark 3.4.3; not CCE executor timing"
+pyspark-local,1,yearly_top_three,1,0.678962,"local[4], Spark 3.4.3; not CCE executor timing"
+pyspark-local,1,movie_vs_genre_average,1,0.770862,"local[4], Spark 3.4.3; not CCE executor timing"
+pandas,0,genre_rating,1,0.10280410000041229,load_seconds=0.616505

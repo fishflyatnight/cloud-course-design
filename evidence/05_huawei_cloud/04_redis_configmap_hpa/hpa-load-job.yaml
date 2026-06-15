@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-hpa-load
+  namespace: cloud-course
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: backend-hpa-load
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: load
+          image: swr.cn-north-4.myhuaweicloud.com/cloud_course/backend:v1
+          command:
+            - python
+            - -c
+            - |
+              import concurrent.futures
+              import time
+              import requests
+
+              url = "http://backend-svc/api/ping"
+              deadline = time.time() + 240
+
+              def worker():
+                  session = requests.Session()
+                  successes = 0
+                  failures = 0
+                  while time.time() < deadline:
+                      try:
+                          response = session.get(url, timeout=2)
+                          if response.status_code == 200:
+                              successes += 1
+                          else:
+                              failures += 1
+                      except requests.RequestException:
+                          failures += 1
+                  return successes, failures
+
+              with concurrent.futures.ThreadPoolExecutor(max_workers=120) as pool:
+                  results = list(pool.map(lambda _: worker(), range(120)))
+
+              print("HPA_LOAD_SUCCESSES", sum(item[0] for item in results), flush=True)
+              print("HPA_LOAD_FAILURES", sum(item[1] for item in results), flush=True)
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "128Mi"
+            limits:
+              cpu: "1000m"
+              memory: "256Mi"

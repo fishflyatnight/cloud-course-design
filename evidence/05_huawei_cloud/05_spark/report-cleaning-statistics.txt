@@ -1,0 +1,25 @@
+RAW_ROW_COUNT=67132
+=== MISSING VALUE REPORT ===
+movie_id: missing=0, ratio=0.000000
+title: missing=0, ratio=0.000000
+original_title: missing=0, ratio=0.000000
+year: missing=2013, ratio=0.029986
+rating_score: missing=3356, ratio=0.049991
+rating_count: missing=0, ratio=0.000000
+genres: missing=5384, ratio=0.080200
+countries: missing=3, ratio=0.000045
+directors: missing=8829, ratio=0.131517
+collect_count: missing=0, ratio=0.000000
+summary: missing=19170, ratio=0.285557
+CLEAN_ROW_COUNT=61853
+DROPPED_ROW_COUNT=5279
+=== NUMERIC SUMMARY mean/std/min/max ===
+26/06/15 04:48:18 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
++-------+------------------+------------------+----------------+-----------------+
+|summary|year              |rating_score      |rating_count    |collect_count    |
++-------+------------------+------------------+----------------+-----------------+
+|mean   |1998.3155384540767|2.4075695600860323|4784.05941506475|7405.883449468902|
+|stddev |19.544256384954217|3.260841700771489 |42782.1796456147|69926.29645673875|
+|min    |1931              |0.0               |0               |0                |
+|max    |2021              |9.8               |1992071         |4235488          |
++-------+------------------+------------------+----------------+-----------------+

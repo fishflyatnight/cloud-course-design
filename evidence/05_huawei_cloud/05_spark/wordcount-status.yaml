@@ -1,0 +1,51 @@
+﻿apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"sparkoperator.k8s.io/v1beta2","kind":"SparkApplication","metadata":{"annotations":{},"name":"spark-wordcount","namespace":"default"},"spec":{"driver":{"coreRequest":"100m","cores":1,"memory":"512m","memoryOverhead":"128m","serviceAccount":"spark"},"executor":{"coreRequest":"100m","cores":1,"instances":1,"memory":"512m","memoryOverhead":"128m"},"image":"swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1","imagePullPolicy":"IfNotPresent","mainApplicationFile":"local:///opt/spark/work/wordcount.py","mode":"cluster","pythonVersion":"3","restartPolicy":{"type":"Never"},"sparkVersion":"3.4.0","type":"Python"}}
+  creationTimestamp: "2026-06-15T04:45:20Z"
+  generation: 1
+  name: spark-wordcount
+  namespace: default
+  resourceVersion: "29065"
+  uid: b4075416-73ae-48f8-881b-a4dc90a0480d
+spec:
+  deps: {}
+  driver:
+    coreRequest: 100m
+    cores: 1
+    memory: 512m
+    memoryOverhead: 128m
+    serviceAccount: spark
+  executor:
+    coreRequest: 100m
+    cores: 1
+    instances: 1
+    memory: 512m
+    memoryOverhead: 128m
+  image: swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work/wordcount.py
+  mode: cluster
+  pythonVersion: "3"
+  restartPolicy:
+    type: Never
+  sparkVersion: 3.4.0
+  type: Python
+status:
+  applicationState:
+    state: COMPLETED
+  driverInfo:
+    podName: spark-wordcount-driver
+    webUIAddress: 10.247.174.103:4040
+    webUIPort: 4040
+    webUIServiceName: spark-wordcount-ui-svc
+  executionAttempts: 1
+  executorState:
+    cloudcoursewordcount-d6596e9ec999b421-exec-1: COMPLETED
+  lastSubmissionAttemptTime: "2026-06-15T04:45:20Z"
+  sparkApplicationId: spark-0058f08f3a0640e9a0ff123b80706a6a
+  submissionAttempts: 1
+  submissionID: 626bb38f-c400-4cdb-8b77-eb1ff7aa2af8
+  terminationTime: "2026-06-15T04:46:31Z"

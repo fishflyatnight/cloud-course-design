@@ -1,0 +1,40 @@
+﻿=== namespaces ===
+NAME              STATUS   AGE
+default           Active   70m
+kube-node-lease   Active   70m
+kube-public       Active   70m
+kube-system       Active   70m
+
+=== system pods ===
+NAMESPACE     NAME                                      READY   STATUS    RESTARTS       AGE   IP              NODE            NOMINATED NODE   READINESS GATES
+kube-system   coredns-85bb9f945c-2kzw5                  1/1     Running   0              69m   10.0.0.130      192.168.0.221   <none>           <none>
+kube-system   coredns-85bb9f945c-94zhr                  1/1     Running   0              69m   10.0.0.2        192.168.0.14    <none>           <none>
+kube-system   everest-csi-controller-6954b7cbd9-l4wst   1/1     Running   0              69m   10.0.0.131      192.168.0.221   <none>           <none>
+kube-system   everest-csi-controller-6954b7cbd9-lvjqc   1/1     Running   2 (3m3s ago)   69m   10.0.0.3        192.168.0.14    <none>           <none>
+kube-system   everest-csi-driver-695c2                  1/1     Running   0              55m   192.168.0.14    192.168.0.14    <none>           <none>
+kube-system   everest-csi-driver-gtm9g                  1/1     Running   0              55m   192.168.0.221   192.168.0.221   <none>           <none>
+kube-system   icagent-fn7tw                             1/1     Running   0              55m   192.168.0.221   192.168.0.221   <none>           <none>
+kube-system   icagent-gjfm8                             1/1     Running   0              55m   192.168.0.14    192.168.0.14    <none>           <none>
+
+=== storage classes ===
+NAME                 PROVISIONER                     RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+csi-disk             everest-csi-provisioner         Delete          Immediate              true                   54m
+csi-disk-dss         everest-csi-provisioner         Delete          Immediate              true                   54m
+csi-disk-topology    everest-csi-provisioner         Delete          WaitForFirstConsumer   true                   54m
+csi-local            everest-csi-provisioner         Delete          Immediate              false                  69m
+csi-local-topology   everest-csi-provisioner         Delete          WaitForFirstConsumer   true                   69m
+csi-nas              everest-csi-provisioner         Delete          Immediate              true                   54m
+csi-obs              everest-csi-provisioner         Delete          Immediate              false                  54m
+csi-sfs              everest-csi-provisioner         Delete          Immediate              false                  54m
+csi-sfsturbo         everest-csi-provisioner         Delete          Immediate              true                   54m
+efs-performance      flexvolume-huawei.com/fuxiefs   Delete          Immediate              true                   68m
+efs-standard         flexvolume-huawei.com/fuxiefs   Delete          Immediate              true                   68m
+nfs-rw               flexvolume-huawei.com/fuxinfs   Delete          Immediate              true                   68m
+obs-standard         flexvolume-huawei.com/fuxiobs   Delete          Immediate              false                  68m
+obs-standard-ia      flexvolume-huawei.com/fuxiobs   Delete          Immediate              false                  68m
+sas                  flexvolume-huawei.com/fuxivol   Delete          Immediate              true                   68m
+sata                 flexvolume-huawei.com/fuxivol   Delete          Immediate              true                   68m
+ssd                  flexvolume-huawei.com/fuxivol   Delete          Immediate              true                   68m
+
+=== metrics check ===
+error: Metrics API not available

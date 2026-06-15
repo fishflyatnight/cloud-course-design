@@ -1,0 +1,34 @@
+apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  name: douban-analysis-2executor
+  namespace: default
+spec:
+  type: Python
+  pythonVersion: "3"
+  mode: cluster
+  image: "swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1"
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work/spark_sql_analysis.py
+  arguments:
+    - --input
+    - "/opt/spark/work/data/douban_movies.csv"
+    - --format
+    - csv
+  sparkVersion: "3.4.3"
+  restartPolicy:
+    type: Never
+  driver:
+    cores: 1
+    coreRequest: "100m"
+    memory: "1g"
+    memoryOverhead: "256m"
+    serviceAccount: spark
+  executor:
+    cores: 1
+    # Increase this only after kubectl describe confirms schedulable resources.
+    coreRequest: "100m"
+    instances: 2
+    memory: "1g"
+    memoryOverhead: "256m"
+

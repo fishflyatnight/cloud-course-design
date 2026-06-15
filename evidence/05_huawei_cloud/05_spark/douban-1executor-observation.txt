@@ -1,0 +1,8 @@
+﻿TIME_START=2026-06-15 12:49:27 +08:00
+EXECUTOR_INSTANCES=1
+TIME=12:49:43 STATE=RUNNING
+POD douban-analysis-1executor-driver                 1/1   Running   0     13s
+POD doubansparksqlanalysis-51cefd9ec99d106e-exec-1   1/1   Running   0     8s
+TIME=12:49:59 STATE=COMPLETED
+POD douban-analysis-1executor-driver   0/1   Completed   0     29s
+TIME_END=2026-06-15 12:49:59 +08:00

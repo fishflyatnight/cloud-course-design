@@ -1,0 +1,43 @@
+﻿TIME=2026-06-15 12:28:15 +08:00
+=== HPA ===
+NAME          REFERENCE            TARGETS          MINPODS   MAXPODS   REPLICAS   AGE
+backend-hpa   Deployment/backend   cpu: 1220%/60%   1         4         4          22m
+
+=== BACKEND PODS ===
+NAME                       READY   STATUS    RESTARTS   AGE    IP           NODE            NOMINATED NODE   READINESS GATES
+backend-6bb7d476fd-ccn2m   1/1     Running   0          6m8s   10.0.0.13    192.168.0.14    <none>           <none>
+backend-6bb7d476fd-dq4r2   1/1     Running   0          34s    10.0.0.142   192.168.0.221   <none>           <none>
+backend-6bb7d476fd-mwqb5   1/1     Running   0          34s    10.0.0.15    192.168.0.14    <none>           <none>
+backend-6bb7d476fd-rvntr   1/1     Running   0          34s    10.0.0.141   192.168.0.221   <none>           <none>
+
+=== BACKEND METRICS ===
+NAME                       CPU(cores)   MEMORY(bytes)   
+backend-6bb7d476fd-ccn2m   305m         33Mi            
+
+=== HPA CONDITIONS ===
+Name:                                                  backend-hpa
+Namespace:                                             cloud-course
+Labels:                                                <none>
+Annotations:                                           <none>
+CreationTimestamp:                                     Mon, 15 Jun 2026 12:05:26 +0800
+Reference:                                             Deployment/backend
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  1220% (305m) / 60%
+Min replicas:                                          1
+Max replicas:                                          4
+Deployment pods:                                       4 current / 4 desired
+Conditions:
+  Type            Status  Reason            Message
+  ----            ------  ------            -------
+  AbleToScale     True    ReadyForNewScale  recommended size matches current size
+  ScalingActive   True    ValidMetricFound  the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  True    TooManyReplicas   the desired replica count is more than the maximum replica count
+Events:
+  Type     Reason                        Age                  From                       Message
+  ----     ------                        ----                 ----                       -------
+  Warning  FailedGetResourceMetric       19m (x12 over 22m)   horizontal-pod-autoscaler  failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  19m (x12 over 22m)   horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: unable to get metrics for resource cpu: no metrics returned from resource metrics API
+  Warning  FailedComputeMetricsReplicas  5m50s (x5 over 19m)  horizontal-pod-autoscaler  invalid metrics (1 invalid out of 1), first error is: failed to get cpu resource metric value: failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Warning  FailedGetResourceMetric       5m35s (x6 over 19m)  horizontal-pod-autoscaler  failed to get cpu utilization: did not receive metrics for targeted pods (pods might be unready)
+  Normal   SuccessfulRescale             65s (x2 over 17m)    horizontal-pod-autoscaler  New size: 1; reason: All metrics below target
+  Normal   SuccessfulRescale             35s                  horizontal-pod-autoscaler  New size: 4; reason: cpu resource utilization (percentage of request) above target

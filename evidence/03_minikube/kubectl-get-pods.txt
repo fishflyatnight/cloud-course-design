@@ -1,0 +1,4 @@
+﻿NAME                        READY   STATUS    RESTARTS   AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+backend-6d546bd876-kds4z    1/1     Running   0          7m46s   10.244.0.46   minikube   <none>           <none>
+frontend-6fdbfddd96-kb9f8   1/1     Running   0          13m     10.244.0.42   minikube   <none>           <none>
+redis-79bdfd84dc-t664h      1/1     Running   0          13m     10.244.0.40   minikube   <none>           <none>

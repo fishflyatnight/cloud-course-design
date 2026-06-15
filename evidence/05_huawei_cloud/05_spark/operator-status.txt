@@ -1,0 +1,10 @@
+﻿NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                  IMAGES                                                               SELECTOR
+deployment.apps/spark-operator-controller   1/1     1            1           63s   spark-operator-controller   swr.cn-north-4.myhuaweicloud.com/cloud_course/spark-operator:2.5.0   app.kubernetes.io/component=controller,app.kubernetes.io/instance=spark-operator,app.kubernetes.io/name=spark-operator
+deployment.apps/spark-operator-webhook      1/1     1            1           63s   spark-operator-webhook      swr.cn-north-4.myhuaweicloud.com/cloud_course/spark-operator:2.5.0   app.kubernetes.io/component=webhook,app.kubernetes.io/instance=spark-operator,app.kubernetes.io/name=spark-operator
+
+NAME                                            READY   STATUS    RESTARTS   AGE   IP          NODE           NOMINATED NODE   READINESS GATES
+pod/spark-operator-controller-c7b86488d-457vn   1/1     Running   0          64s   10.0.0.16   192.168.0.14   <none>           <none>
+pod/spark-operator-webhook-6c4746c68c-fsfl8     1/1     Running   0          64s   10.0.0.17   192.168.0.14   <none>           <none>
+
+NAME                                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/spark-operator-webhook-svc   ClusterIP   10.247.142.106   <none>        9443/TCP   65s   app.kubernetes.io/component=webhook,app.kubernetes.io/instance=spark-operator,app.kubernetes.io/name=spark-operator

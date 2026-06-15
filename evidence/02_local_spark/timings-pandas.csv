@@ -1,0 +1,2 @@
+engine,executors,query,run,seconds,notes
+pandas,0,genre_rating,1,0.10280410000041229,load_seconds=0.616505

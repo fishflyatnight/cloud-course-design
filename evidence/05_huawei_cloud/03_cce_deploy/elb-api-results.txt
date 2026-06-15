@@ -1,0 +1,5 @@
+﻿TIME=2026-06-15 12:12:30 +08:00
+URL=http://123.249.121.136
+PING={"status":"ok"}
+REDIS_SET={"key":"cce-testkey","status":"ok","value":"hello-cce"}
+REDIS_GET={"found":true,"key":"cce-testkey","status":"ok","value":"hello-cce"}

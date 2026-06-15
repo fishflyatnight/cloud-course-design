@@ -1,0 +1,26 @@
+﻿TIME_START=2026-06-15 12:26:46 +08:00
+TIME=12:27:03 RUNNING_BACKEND_PODS=2 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     21m
+POD backend-6bb7d476fd-ccn2m   1/1   Running   0     4m54s
+POD backend-6bb7d476fd-s7g89   1/1   Running   0     4m42s
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:27:19 RUNNING_BACKEND_PODS=1 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     21m
+POD backend-6bb7d476fd-ccn2m   1/1   Running       0     5m10s
+POD backend-6bb7d476fd-s7g89   1/1   Terminating   0     4m58s
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:27:35 RUNNING_BACKEND_PODS=1 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     1     22m
+POD backend-6bb7d476fd-ccn2m   1/1   Running       0     5m26s
+POD backend-6bb7d476fd-s7g89   1/1   Terminating   0     5m14s
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:27:51 RUNNING_BACKEND_PODS=4 HPA=backend-hpa   Deployment/backend   cpu: 1220%/60%   1     4     1     22m
+POD backend-6bb7d476fd-ccn2m   1/1   Running   0     5m42s
+POD backend-6bb7d476fd-dq4r2   0/1   Running   0     8s
+POD backend-6bb7d476fd-mwqb5   0/1   Running   0     8s
+POD backend-6bb7d476fd-rvntr   0/1   Running   0     8s
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   305m         33Mi            

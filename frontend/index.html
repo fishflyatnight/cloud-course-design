@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云计算技术课程设计</title>
+  <style>
+    body {
+      max-width: 760px;
+      margin: 64px auto;
+      padding: 0 24px;
+      color: #16324f;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+    .card {
+      padding: 32px;
+      border: 1px solid #d7e3ef;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(25, 70, 110, 0.08);
+    }
+    button {
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 8px;
+      background: #1769aa;
+      color: white;
+      cursor: pointer;
+    }
+    pre {
+      padding: 12px;
+      background: #f4f7fa;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>云计算技术课程设计</h1>
+    <h2>Flask + Redis + Kubernetes on Huawei Cloud</h2>
+    <p>学号：2020113571</p>
+    <p>姓名：俞冠霖</p>
+    <button id="ping-button" type="button">访问 /api/ping</button>
+    <pre id="result">尚未发起请求</pre>
+  </main>
+  <script>
+    document.getElementById("ping-button").addEventListener("click", async () => {
+      const result = document.getElementById("result");
+      result.textContent = "请求中...";
+      try {
+        const response = await fetch("/api/ping");
+        result.textContent = JSON.stringify(await response.json(), null, 2);
+      } catch (error) {
+        result.textContent = `请求失败：${error}`;
+      }
+    });
+  </script>
+</body>
+</html>

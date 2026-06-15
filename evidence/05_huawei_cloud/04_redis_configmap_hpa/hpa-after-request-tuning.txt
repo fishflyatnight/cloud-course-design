@@ -1,0 +1,33 @@
+﻿TIME_START=2026-06-15 12:23:37 +08:00
+TIME=12:23:53 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     18m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           28Mi            
+TIME=12:24:09 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     18m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           28Mi            
+TIME=12:24:25 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     18m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           28Mi            
+TIME=12:24:42 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     19m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:24:58 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     19m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:25:14 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     19m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:25:30 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     20m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            
+TIME=12:25:46 HPA=backend-hpa   Deployment/backend   cpu: 4%/60%   1     4     2     20m DEPLOYMENT=2     2     2
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-6bb7d476fd-ccn2m   1m           28Mi            
+METRIC backend-6bb7d476fd-s7g89   1m           29Mi            

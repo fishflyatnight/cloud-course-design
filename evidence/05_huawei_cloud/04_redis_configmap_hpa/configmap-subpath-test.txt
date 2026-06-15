@@ -1,0 +1,17 @@
+﻿TIME_START=2026-06-15 12:14:57 +08:00
+OLD_FRONTEND_POD=frontend-58456f7b4c-vmc86
+configmap/frontend-nginx-config configured
+OLD_POD_AFTER_CONFIGMAP_UPDATE=    server backend-svc.cloud-course.svc.cluster.local:80;
+EXPECTED_OLD_POD_STILL_PORT_80=True
+pod "frontend-58456f7b4c-vmc86" deleted from cloud-course namespace
+Waiting for deployment "frontend" rollout to finish: 0 of 1 updated replicas are available...
+deployment "frontend" successfully rolled out
+NEW_FRONTEND_POD=frontend-58456f7b4c-5gflb
+NEW_POD_MOUNTED_CONFIG=    server backend-svc:81;
+configmap/frontend-nginx-config configured
+pod "frontend-58456f7b4c-5gflb" deleted from cloud-course namespace
+Waiting for deployment "frontend" rollout to finish: 0 of 1 updated replicas are available...
+deployment "frontend" successfully rolled out
+RESTORED_FRONTEND_POD=frontend-58456f7b4c-wptfh
+RESTORED_MOUNTED_CONFIG=    server backend-svc.cloud-course.svc.cluster.local:80;
+TIME_END=2026-06-15 12:15:04 +08:00

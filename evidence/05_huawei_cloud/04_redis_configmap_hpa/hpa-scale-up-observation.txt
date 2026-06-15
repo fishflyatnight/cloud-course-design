@@ -1,0 +1,21 @@
+﻿TIME_START=2026-06-15 12:15:59 +08:00
+PRESSURE_PID=12224
+TIME=12:17:17 RUNNING_BACKEND_PODS=0 HPA=Unable to connect to the server: dial tcp 122.9.9.140:5443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+METRIC Unable to connect to the server: dial tcp 122.9.9.140:5443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+TIME=12:17:55 RUNNING_BACKEND_PODS=1 HPA=Unable to connect to the server: dial tcp 122.9.9.140:5443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-7474658948-hxjg5   18m          30Mi            
+TIME=12:18:55 RUNNING_BACKEND_PODS=0 HPA=backend-hpa   Deployment/backend   cpu: 18%/60%   1     4     1     12m
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-7474658948-hxjg5   18m          30Mi            
+TIME=12:19:55 RUNNING_BACKEND_PODS=0 HPA=Unable to connect to the server: dial tcp 122.9.9.140:5443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-7474658948-hxjg5   17m          30Mi            
+TIME=12:20:12 RUNNING_BACKEND_PODS=1 HPA=backend-hpa   Deployment/backend   cpu: 17%/60%   1     4     1     14m
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-7474658948-hxjg5   17m          30Mi            
+TIME=12:20:53 RUNNING_BACKEND_PODS=1 HPA=backend-hpa   Deployment/backend   cpu: 17%/60%   1     4     1     15m
+METRIC Unable to connect to the server: dial tcp 122.9.9.140:5443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+TIME=12:21:28 RUNNING_BACKEND_PODS=1 HPA=backend-hpa   Deployment/backend   cpu: 16%/60%   1     4     1     15m
+METRIC NAME                       CPU(cores)   MEMORY(bytes)   
+METRIC backend-7474658948-hxjg5   16m          30Mi            

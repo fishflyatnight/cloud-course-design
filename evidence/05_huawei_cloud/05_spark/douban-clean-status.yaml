@@ -1,0 +1,58 @@
+﻿apiVersion: sparkoperator.k8s.io/v1beta2
+kind: SparkApplication
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"sparkoperator.k8s.io/v1beta2","kind":"SparkApplication","metadata":{"annotations":{},"name":"douban-clean-cce","namespace":"default"},"spec":{"arguments":["--input","/opt/spark/work/data/douban_movies.csv","--output","/tmp/douban-cleaned","--format","parquet"],"driver":{"coreRequest":"100m","cores":1,"memory":"1g","memoryOverhead":"256m","serviceAccount":"spark"},"executor":{"coreRequest":"100m","cores":1,"instances":1,"memory":"1g","memoryOverhead":"256m"},"image":"swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1","imagePullPolicy":"IfNotPresent","mainApplicationFile":"local:///opt/spark/work/clean_douban.py","mode":"cluster","pythonVersion":"3","restartPolicy":{"type":"Never"},"sparkVersion":"3.4.3","type":"Python"}}
+  creationTimestamp: "2026-06-15T04:47:56Z"
+  generation: 1
+  name: douban-clean-cce
+  namespace: default
+  resourceVersion: "29662"
+  uid: 84984691-0ef2-42da-affd-b0b9b3be8683
+spec:
+  arguments:
+  - --input
+  - /opt/spark/work/data/douban_movies.csv
+  - --output
+  - /tmp/douban-cleaned
+  - --format
+  - parquet
+  deps: {}
+  driver:
+    coreRequest: 100m
+    cores: 1
+    memory: 1g
+    memoryOverhead: 256m
+    serviceAccount: spark
+  executor:
+    coreRequest: 100m
+    cores: 1
+    instances: 1
+    memory: 1g
+    memoryOverhead: 256m
+  image: swr.cn-north-4.myhuaweicloud.com/cloud_course/spark:v1
+  imagePullPolicy: IfNotPresent
+  mainApplicationFile: local:///opt/spark/work/clean_douban.py
+  mode: cluster
+  pythonVersion: "3"
+  restartPolicy:
+    type: Never
+  sparkVersion: 3.4.3
+  type: Python
+status:
+  applicationState:
+    state: COMPLETED
+  driverInfo:
+    podName: douban-clean-cce-driver
+    webUIAddress: 10.247.169.249:4040
+    webUIPort: 4040
+    webUIServiceName: douban-clean-cce-ui-svc
+  executionAttempts: 1
+  executorState:
+    doubandatacleaning-f3a4859ec99bacfb-exec-1: COMPLETED
+  lastSubmissionAttemptTime: "2026-06-15T04:47:56Z"
+  sparkApplicationId: spark-746e3c2196fc478dace1288319b14f8b
+  submissionAttempts: 1
+  submissionID: de393fda-5693-412b-9005-6418881d4a8c
+  terminationTime: "2026-06-15T04:48:23Z"

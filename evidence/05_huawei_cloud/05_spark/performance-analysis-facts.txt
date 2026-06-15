@@ -1,0 +1,12 @@
+Performance comparison facts (actual measured values)
+Pandas local genre query: 0.102804 s
+PySpark CCE, 1 executor: 1.258931 s
+PySpark CCE, 2 executors: 1.357760 s
+Observed Spark speedup T1/T2: 0.927212
+SparkApplication total duration, 1 executor: 26 s
+SparkApplication total duration, 2 executors: 28 s
+
+The observed speedup is below 1, so a positive Amdahl parallel
+fraction cannot be estimated from this run. For this small dataset,
+executor startup, scheduling, serialization, and shuffle overhead
+outweighed the benefit of adding one executor.

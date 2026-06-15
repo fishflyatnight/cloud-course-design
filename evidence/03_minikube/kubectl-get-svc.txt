@@ -1,0 +1,4 @@
+﻿NAME           TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+backend-svc    LoadBalancer   10.99.202.179   <pending>     80:32180/TCP   14m
+frontend-svc   ClusterIP      10.96.97.112    <none>        80/TCP         18m
+redis-svc      ClusterIP      10.98.249.219   <none>        6379/TCP       18m

@@ -1,0 +1,14 @@
+=== CLEANING START input=file:///opt/spark/work/data/douban_movies.csv output=file:///tmp/douban-cleaned ===
+=== RAW SCHEMA ===
+root
+ |-- movie_id: integer (nullable = true)
+ |-- title: string (nullable = true)
+ |-- original_title: string (nullable = true)
+ |-- year: integer (nullable = true)
+ |-- rating_score: double (nullable = true)
+ |-- rating_count: long (nullable = true)
+ |-- genres: string (nullable = true)
+ |-- countries: string (nullable = true)
+ |-- directors: string (nullable = true)
+ |-- collect_count: long (nullable = true)
+ |-- summary: string (nullable = true)

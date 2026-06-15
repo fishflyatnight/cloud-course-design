@@ -1,0 +1,4 @@
+﻿IMAGE|ID|ARCHITECTURE|SIZE_BYTES
+cloud-course-backend:local|sha256:194406e9a49de950385b402dccd3d979f7424ad849a82a26b0ebdd8a66e8598c|amd64|48914249
+cloud-course-frontend:local|sha256:c0e2d9aaa35ed46c8a87c2baa55e2554bb385c61373babfb24ea1c2ac05e6c92|amd64|20975958
+cloud-course-spark:local|sha256:c447c8438890edc29ad9da605fef5cb3e08bd38fac24c304091f182f3377d420|amd64|1181207786

@@ -1,0 +1,18 @@
+﻿TIME_START=2026-06-15 12:45:20 +08:00
+TIME=12:45:31 STATE=SUBMITTED
+POD spark-wordcount-driver   0/1   ContainerCreating   0     8s
+TIME=12:45:42 STATE=SUBMITTED
+POD spark-wordcount-driver   0/1   ContainerCreating   0     19s
+TIME=12:45:53 STATE=RUNNING
+POD spark-wordcount-driver   1/1   Running   0     30s
+TIME=12:46:04 STATE=RUNNING
+POD cloudcoursewordcount-d6596e9ec999b421-exec-1   0/1   ContainerCreating   0     9s
+POD spark-wordcount-driver                         1/1   Running             0     41s
+TIME=12:46:15 STATE=RUNNING
+POD cloudcoursewordcount-d6596e9ec999b421-exec-1   0/1   ContainerCreating   0     20s
+POD spark-wordcount-driver                         1/1   Running             0     52s
+TIME=12:46:26 STATE=RUNNING
+POD cloudcoursewordcount-d6596e9ec999b421-exec-1   1/1   Running   0     31s
+POD spark-wordcount-driver                         1/1   Running   0     63s
+TIME=12:46:37 STATE=COMPLETED
+POD spark-wordcount-driver   0/1   Completed   0     74s

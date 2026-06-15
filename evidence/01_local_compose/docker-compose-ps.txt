@@ -1,0 +1,4 @@
+﻿NAME                             IMAGE                         COMMAND                  SERVICE    CREATED              STATUS                   PORTS
+cloud-course-design-backend-1    cloud-course-backend:local    "python app.py"          backend    2 minutes ago        Up 2 minutes             0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+cloud-course-design-frontend-1   cloud-course-frontend:local   "/docker-entrypoint.…"   frontend   About a minute ago   Up About a minute        0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+cloud-course-design-redis-1      redis:7-alpine                "docker-entrypoint.s…"   redis      2 minutes ago        Up 2 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp

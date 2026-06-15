@@ -1,0 +1,161 @@
+{
+    "apiVersion":  "apps/v1",
+    "kind":  "Deployment",
+    "metadata":  {
+                     "annotations":  {
+                                         "deployment.kubernetes.io/revision":  "1"
+                                     },
+                     "labels":  {
+                                    "app.kubernetes.io/component":  "webhook",
+                                    "app.kubernetes.io/instance":  "spark-operator",
+                                    "app.kubernetes.io/managed-by":  "Helm",
+                                    "app.kubernetes.io/name":  "spark-operator",
+                                    "app.kubernetes.io/version":  "2.5.0",
+                                    "helm.sh/chart":  "spark-operator-2.5.0"
+                                },
+                     "name":  "spark-operator-webhook",
+                     "namespace":  "spark-operator"
+                 },
+    "spec":  {
+                 "progressDeadlineSeconds":  600,
+                 "replicas":  1,
+                 "revisionHistoryLimit":  10,
+                 "selector":  {
+                                  "matchLabels":  {
+                                                      "app.kubernetes.io/component":  "webhook",
+                                                      "app.kubernetes.io/instance":  "spark-operator",
+                                                      "app.kubernetes.io/name":  "spark-operator"
+                                                  }
+                              },
+                 "strategy":  {
+                                  "rollingUpdate":  {
+                                                        "maxSurge":  "25%",
+                                                        "maxUnavailable":  "25%"
+                                                    },
+                                  "type":  "RollingUpdate"
+                              },
+                 "template":  {
+                                  "metadata":  {
+                                                   "labels":  {
+                                                                  "app.kubernetes.io/component":  "webhook",
+                                                                  "app.kubernetes.io/instance":  "spark-operator",
+                                                                  "app.kubernetes.io/name":  "spark-operator"
+                                                              }
+                                               },
+                                  "spec":  {
+                                               "automountServiceAccountToken":  true,
+                                               "containers":  [
+                                                                  {
+                                                                      "args":  [
+                                                                                   "webhook",
+                                                                                   "start",
+                                                                                   "--zap-log-level=info",
+                                                                                   "--zap-encoder=console",
+                                                                                   "--namespaces=default",
+                                                                                   "--webhook-secret-name=spark-operator-webhook-certs",
+                                                                                   "--webhook-secret-namespace=spark-operator",
+                                                                                   "--webhook-svc-name=spark-operator-webhook-svc",
+                                                                                   "--webhook-svc-namespace=spark-operator",
+                                                                                   "--webhook-port=9443",
+                                                                                   "--mutating-webhook-name=spark-operator-webhook",
+                                                                                   "--validating-webhook-name=spark-operator-webhook",
+                                                                                   "--enable-metrics=true",
+                                                                                   "--metrics-bind-address=:8080",
+                                                                                   "--metrics-endpoint=/metrics",
+                                                                                   "--metrics-prefix=",
+                                                                                   "--metrics-labels=app_type",
+                                                                                   "--leader-election=true",
+                                                                                   "--leader-election-lock-name=spark-operator-webhook-lock",
+                                                                                   "--leader-election-lock-namespace=spark-operator"
+                                                                               ],
+                                                                      "image":  "swr.cn-north-4.myhuaweicloud.com/cloud_course/spark-operator:2.5.0",
+                                                                      "imagePullPolicy":  "IfNotPresent",
+                                                                      "livenessProbe":  {
+                                                                                            "failureThreshold":  3,
+                                                                                            "httpGet":  {
+                                                                                                            "path":  "/healthz",
+                                                                                                            "port":  8081,
+                                                                                                            "scheme":  "HTTP"
+                                                                                                        },
+                                                                                            "periodSeconds":  10,
+                                                                                            "successThreshold":  1,
+                                                                                            "timeoutSeconds":  1
+                                                                                        },
+                                                                      "name":  "spark-operator-webhook",
+                                                                      "ports":  [
+                                                                                    {
+                                                                                        "containerPort":  9443,
+                                                                                        "name":  "webhook",
+                                                                                        "protocol":  "TCP"
+                                                                                    },
+                                                                                    {
+                                                                                        "containerPort":  8080,
+                                                                                        "name":  "metrics",
+                                                                                        "protocol":  "TCP"
+                                                                                    }
+                                                                                ],
+                                                                      "readinessProbe":  {
+                                                                                             "failureThreshold":  3,
+                                                                                             "httpGet":  {
+                                                                                                             "path":  "/readyz",
+                                                                                                             "port":  8081,
+                                                                                                             "scheme":  "HTTP"
+                                                                                                         },
+                                                                                             "periodSeconds":  10,
+                                                                                             "successThreshold":  1,
+                                                                                             "timeoutSeconds":  1
+                                                                                         },
+                                                                      "resources":  {
+
+                                                                                    },
+                                                                      "securityContext":  {
+                                                                                              "allowPrivilegeEscalation":  false,
+                                                                                              "capabilities":  {
+                                                                                                                   "drop":  [
+                                                                                                                                "ALL"
+                                                                                                                            ]
+                                                                                                               },
+                                                                                              "privileged":  false,
+                                                                                              "readOnlyRootFilesystem":  true,
+                                                                                              "runAsNonRoot":  true,
+                                                                                              "seccompProfile":  {
+                                                                                                                     "type":  "RuntimeDefault"
+                                                                                                                 }
+                                                                                          },
+                                                                      "terminationMessagePath":  "/dev/termination-log",
+                                                                      "terminationMessagePolicy":  "File",
+                                                                      "volumeMounts":  [
+                                                                                           {
+                                                                                               "mountPath":  "/etc/k8s-webhook-server/serving-certs",
+                                                                                               "name":  "serving-certs",
+                                                                                               "subPath":  "serving-certs"
+                                                                                           }
+                                                                                       ]
+                                                                  }
+                                                              ],
+                                               "dnsPolicy":  "ClusterFirst",
+                                               "imagePullSecrets":  [
+                                                                        {
+                                                                            "name":  "swr-pull-secret"
+                                                                        }
+                                                                    ],
+                                               "restartPolicy":  "Always",
+                                               "schedulerName":  "default-scheduler",
+                                               "securityContext":  {
+                                                                       "fsGroup":  185
+                                                                   },
+                                               "serviceAccount":  "spark-operator-webhook",
+                                               "serviceAccountName":  "spark-operator-webhook",
+                                               "terminationGracePeriodSeconds":  30,
+                                               "volumes":  [
+                                                               {
+                                                                   "emptyDir":  {
+                                                                                    "sizeLimit":  "500Mi"
+                                                                                },
+                                                                   "name":  "serving-certs"
+                                                               }
+                                                           ]
+                                           }
+                              }
+             }
+}

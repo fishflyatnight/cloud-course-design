@@ -1,0 +1,33 @@
+﻿TIME=2026-06-15 12:09:57 +08:00
+=== NODES ===
+NAME            STATUS   ROLES    AGE   VERSION             INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
+192.168.0.14    Ready    <none>   69m   v1.35.3-r0-35.0.8   192.168.0.14    <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+192.168.0.221   Ready    <none>   69m   v1.35.3-r0-35.0.8   192.168.0.221   <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+
+=== PODS ===
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+backend-7474658948-hxjg5    1/1     Running   0          97s   10.0.0.9     192.168.0.14    <none>           <none>
+backend-7474658948-k4bwq    1/1     Running   0          97s   10.0.0.136   192.168.0.221   <none>           <none>
+frontend-58456f7b4c-vmc86   1/1     Running   0          97s   10.0.0.10    192.168.0.14    <none>           <none>
+redis-65d4df6cf8-mfrrm      1/1     Running   0          97s   10.0.0.11    192.168.0.14    <none>           <none>
+
+=== SERVICES ===
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+backend-svc    LoadBalancer   10.247.8.171    <pending>     80:30635/TCP   4m33s   app=backend
+frontend-svc   ClusterIP      10.247.223.90   <none>        80/TCP         4m31s   app=frontend
+redis-svc      ClusterIP      10.247.155.58   <none>        6379/TCP       4m34s   app=redis
+
+=== PVC ===
+NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+redis-data-pvc   Bound    pvc-b3faf399-2efa-42af-9aa0-963b587ad925   10Gi       RWO            csi-disk       <unset>                 4m36s   Filesystem
+
+=== HPA ===
+NAME          REFERENCE            TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+backend-hpa   Deployment/backend   cpu: 1%/60%   1         4         2          4m31s
+
+=== POD METRICS ===
+NAME                        CPU(cores)   MEMORY(bytes)   
+backend-7474658948-hxjg5    1m           29Mi            
+backend-7474658948-k4bwq    1m           29Mi            
+frontend-58456f7b4c-vmc86   1m           2Mi             
+redis-65d4df6cf8-mfrrm      4m           3Mi             

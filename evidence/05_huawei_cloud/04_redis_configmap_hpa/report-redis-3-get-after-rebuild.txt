@@ -1,0 +1,7 @@
+Redis persistence verification - step 3: GET after Pod rebuild
+NEW_REDIS_POD=redis-65d4df6cf8-q7vrr
+PVC_VOLUME_BEFORE=pvc-b3faf399-2efa-42af-9aa0-963b587ad925
+PVC_VOLUME_AFTER=pvc-b3faf399-2efa-42af-9aa0-963b587ad925
+VOLUME_UNCHANGED=True
+GET_RESULT={"found":true,"key":"cce-persist-key","status":"ok","value":"survives-pod-restart"}
+TIME_END=2026-06-15 12:14:12 +08:00

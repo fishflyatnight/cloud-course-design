@@ -1,0 +1,12 @@
+时间：2026-06-15
+目标集群：cloud-course-cce
+Region：cn-north-4
+KubeConfig context：internal
+KubeConfig API endpoint：192.168.0.225:5443
+本机 TCP 测试结果：连接超时
+kubectl get nodes 结果：因本机无法路由到 CCE 私网 API 而超时
+
+结论：
+当前文件是内网访问 KubeConfig。CloudShell 位于华为云网络中，因此可以访问；
+本机需要 CCE 外网访问 KubeConfig/公网 API，或通过与 VPC 连通的 ECS/CloudShell 执行。
+本记录不包含证书、Token 或 KubeConfig 内容。

@@ -1,0 +1,2 @@
+﻿NAME                     READY   STATUS      RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+spark-wordcount-driver   0/1     Completed   0          42s   10.244.0.58   minikube   <none>           <none>

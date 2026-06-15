@@ -1,0 +1,5 @@
+Redis persistence verification - step 1: SET
+TIME_START=2026-06-15 12:13:37 +08:00
+SET_RESULT={"key":"cce-persist-key","status":"ok","value":"survives-pod-restart"}
+OLD_REDIS_POD=redis-65d4df6cf8-mfrrm
+PVC_VOLUME=pvc-b3faf399-2efa-42af-9aa0-963b587ad925

@@ -1,0 +1,25 @@
+﻿TIME=2026-06-15 12:54:26 +08:00
+> kubectl get nodes -o wide
+NAME            STATUS   ROLES    AGE    VERSION             INTERNAL-IP     EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION       CONTAINER-RUNTIME
+192.168.0.14    Ready    <none>   114m   v1.35.3-r0-35.0.8   192.168.0.14    <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+192.168.0.221   Ready    <none>   114m   v1.35.3-r0-35.0.8   192.168.0.221   <none>        Ubuntu 22.04.5 LTS   5.15.0-173-generic   containerd://2.2.1-57-gb72de14b1
+
+> kubectl get pods -n cloud-course -o wide
+NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE            NOMINATED NODE   READINESS GATES
+backend-6bb7d476fd-rvntr    1/1     Running   0          26m   10.0.0.141   192.168.0.221   <none>           <none>
+frontend-58456f7b4c-wptfh   1/1     Running   0          39m   10.0.0.12    192.168.0.14    <none>           <none>
+redis-65d4df6cf8-q7vrr      1/1     Running   0          40m   10.0.0.137   192.168.0.221   <none>           <none>
+
+> kubectl get svc -n cloud-course
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP                    PORT(S)        AGE
+backend-svc    LoadBalancer   10.247.8.171    123.249.121.136,192.168.0.21   80:30635/TCP   49m
+frontend-svc   ClusterIP      10.247.223.90   <none>                         80/TCP         49m
+redis-svc      ClusterIP      10.247.155.58   <none>                         6379/TCP       49m
+
+> kubectl get pvc -n cloud-course
+NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+redis-data-pvc   Bound    pvc-b3faf399-2efa-42af-9aa0-963b587ad925   10Gi       RWO            csi-disk       <unset>                 49m
+
+> kubectl get hpa -n cloud-course
+NAME          REFERENCE            TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+backend-hpa   Deployment/backend   cpu: 4%/60%   1         4         1          49m

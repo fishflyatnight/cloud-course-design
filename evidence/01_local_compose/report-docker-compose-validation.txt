@@ -1,0 +1,23 @@
+﻿TIME=2026-06-15 13:21:17 +08:00
+> docker compose ps
+NAME                             IMAGE                         COMMAND                  SERVICE    CREATED          STATUS                   PORTS
+cloud-course-design-backend-1    cloud-course-backend:local    "python app.py"          backend    10 seconds ago   Up 3 seconds             0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+cloud-course-design-frontend-1   cloud-course-frontend:local   "/docker-entrypoint.…"   frontend   10 seconds ago   Up 3 seconds             0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+cloud-course-design-redis-1      redis:7-alpine                "docker-entrypoint.s…"   redis      11 seconds ago   Up 9 seconds (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+
+> GET http://127.0.0.1:8080/api/ping
+{"status":"ok"}
+
+> docker compose logs --tail=30 backend
+backend-1  | 2026-06-15 05:21:14,528 INFO cloud-course-backend Redis target configured: host=redis port=6379
+backend-1  |  * Serving Flask app 'app'
+backend-1  |  * Debug mode: off
+backend-1  | 2026-06-15 05:21:14,539 INFO werkzeug WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+backend-1  |  * Running on all addresses (0.0.0.0)
+backend-1  |  * Running on http://127.0.0.1:5000
+backend-1  |  * Running on http://172.18.0.3:5000
+backend-1  | 2026-06-15 05:21:14,539 INFO werkzeug Press CTRL+C to quit
+backend-1  | 2026-06-15 05:21:16,167 INFO cloud-course-backend Received /api/ping request from 172.18.0.1
+backend-1  | 2026-06-15 05:21:16,168 INFO werkzeug 172.18.0.4 - - [15/Jun/2026 05:21:16] "GET /api/ping HTTP/1.1" 200 -
+
+

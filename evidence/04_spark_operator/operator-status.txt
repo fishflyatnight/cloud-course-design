@@ -1,0 +1,7 @@
+﻿NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                  IMAGES                                             SELECTOR
+deployment.apps/spark-operator-controller   1/1     1            1           77s   spark-operator-controller   ghcr.io/kubeflow/spark-operator/controller:2.5.0   app.kubernetes.io/component=controller,app.kubernetes.io/instance=spark-operator,app.kubernetes.io/name=spark-operator
+deployment.apps/spark-operator-webhook      1/1     1            1           77s   spark-operator-webhook      ghcr.io/kubeflow/spark-operator/controller:2.5.0   app.kubernetes.io/component=webhook,app.kubernetes.io/instance=spark-operator,app.kubernetes.io/name=spark-operator
+
+NAME                                             READY   STATUS    RESTARTS   AGE   IP            NODE       NOMINATED NODE   READINESS GATES
+pod/spark-operator-controller-6d8d75758c-fqxl7   1/1     Running   0          77s   10.244.0.57   minikube   <none>           <none>
+pod/spark-operator-webhook-644fbf45b4-fd2v7      1/1     Running   0          77s   10.244.0.56   minikube   <none>           <none>

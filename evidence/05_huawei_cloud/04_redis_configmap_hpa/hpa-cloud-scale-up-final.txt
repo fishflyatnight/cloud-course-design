@@ -1,0 +1,11 @@
+﻿NAME                                              REFERENCE            TARGETS          MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/backend-hpa   Deployment/backend   cpu: 1220%/60%   1         4         1          22m
+
+NAME                            READY   STATUS    RESTARTS   AGE     IP           NODE            NOMINATED NODE   READINESS GATES
+pod/backend-6bb7d476fd-ccn2m    1/1     Running   0          5m43s   10.0.0.13    192.168.0.14    <none>           <none>
+pod/backend-6bb7d476fd-dq4r2    0/1     Running   0          9s      10.0.0.142   192.168.0.221   <none>           <none>
+pod/backend-6bb7d476fd-mwqb5    0/1     Running   0          9s      10.0.0.15    192.168.0.14    <none>           <none>
+pod/backend-6bb7d476fd-rvntr    0/1     Running   0          9s      10.0.0.141   192.168.0.221   <none>           <none>
+pod/backend-hpa-load-scpt8      1/1     Running   0          65s     10.0.0.14    192.168.0.14    <none>           <none>
+pod/frontend-58456f7b4c-wptfh   1/1     Running   0          12m     10.0.0.12    192.168.0.14    <none>           <none>
+pod/redis-65d4df6cf8-q7vrr      1/1     Running   0          14m     10.0.0.137   192.168.0.221   <none>           <none>

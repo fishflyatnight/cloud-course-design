@@ -13,6 +13,8 @@
 当前工程已经包含 CCE、SWR 推送、ELB、PVC、ConfigMap、HPA 和 Spark 的真实运行材料。
 尚未生成课程设计报告正文和老师验收问答。
 
+GitHub 公开仓库：`https://github.com/fishflyatnight/cloud-course-design`
+
 ## 已准备内容
 
 - Flask 的 `/api/ping`、Redis 写入/读取接口及后端访问日志。

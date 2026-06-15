@@ -35,7 +35,8 @@
   `data/douban_movies.csv` 完成，Spark 云端运行时使用镜像内同一份数据文件。
 - 尚未把清洗结果持久化到 OBS。
 - 已保存 SWR 控制台镜像列表总览；仍建议补一张版本详情页截图，使 Tag `v1` 直接可见。
-- 尚未发布 GitHub/Gitee 代码仓库。
+- GitHub 公开仓库已创建并推送：
+  `https://github.com/fishflyatnight/cloud-course-design`
 - 尚未生成课程设计报告正文。
 - 尚未生成老师验收问答。
 

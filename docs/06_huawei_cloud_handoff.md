@@ -32,8 +32,9 @@ kubectl get nodes -o wide
 1. SWR 镜像列表总览已经保存。再进入镜像版本详情页，补一张直接显示 Tag `v1` 的截图。
 2. 教师暂未提供 OBS `s3a://` 路径；当前分析使用本地 `douban_movies.csv`。
    若教师后续强制指定 OBS，只需补充桶名和对象路径，不需要提供 AK/SK。
-3. 本地 Git 仓库已经初始化；待选择 GitHub/Gitee 并登录后再创建远端、提交和推送。
-   发布前先检查 `.env`、KubeConfig、Token、Secret 明文均未进入暂存区。
+3. GitHub 公开仓库已经创建并推送：
+   `https://github.com/fishflyatnight/cloud-course-design`
+   首次推送前已确认 `.env`、数据集、KubeConfig、Token 和真实 Secret 未进入提交。
 4. 基于 `evidence/05_huawei_cloud/REPORT_MATERIAL_INDEX.md` 生成最终报告。
 5. 报告和截图确认完成后，再执行清理并手动释放 ELB、CCE 节点、磁盘和 OBS 等收费资源。
 

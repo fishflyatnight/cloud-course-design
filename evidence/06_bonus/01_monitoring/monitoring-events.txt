@@ -1,0 +1,38 @@
+﻿LAST SEEN   TYPE      REASON                  OBJECT                                                      MESSAGE
+5m56s       Normal    SuccessfulCreate        replicaset/monitoring-grafana-f9cdb8c45                     Created pod: monitoring-grafana-f9cdb8c45-pfmdm
+5m56s       Normal    ScalingReplicaSet       deployment/monitoring-grafana                               Scaled up replica set monitoring-grafana-f9cdb8c45 from 0 to 1
+5m56s       Normal    ScalingReplicaSet       deployment/monitoring-kube-prometheus-operator              Scaled up replica set monitoring-kube-prometheus-operator-66c9c9849c from 0 to 1
+5m56s       Normal    SuccessfulCreate        daemonset/monitoring-prometheus-node-exporter               Created pod: monitoring-prometheus-node-exporter-zb7bl
+5m56s       Normal    SuccessfulCreate        replicaset/monitoring-kube-prometheus-operator-66c9c9849c   Created pod: monitoring-kube-prometheus-operator-66c9c9849c-lsbzg
+5m56s       Normal    Pulling                 pod/monitoring-prometheus-node-exporter-s8fqz               Pulling image "swr.cn-north-4.myhuaweicloud.com/cloud_course/node-exporter:v1.11.1"
+5m56s       Normal    Scheduled               pod/monitoring-kube-prometheus-operator-66c9c9849c-lsbzg    Successfully assigned monitoring/monitoring-kube-prometheus-operator-66c9c9849c-lsbzg to 192.168.0.221
+5m56s       Normal    Scheduled               pod/monitoring-prometheus-node-exporter-s8fqz               Successfully assigned monitoring/monitoring-prometheus-node-exporter-s8fqz to 192.168.0.221
+5m56s       Normal    Pulling                 pod/monitoring-prometheus-node-exporter-zb7bl               Pulling image "swr.cn-north-4.myhuaweicloud.com/cloud_course/node-exporter:v1.11.1"
+5m56s       Normal    Scheduled               pod/monitoring-prometheus-node-exporter-zb7bl               Successfully assigned monitoring/monitoring-prometheus-node-exporter-zb7bl to 192.168.0.14
+5m56s       Normal    SuccessfulCreate        daemonset/monitoring-prometheus-node-exporter               Created pod: monitoring-prometheus-node-exporter-s8fqz
+5m56s       Normal    Scheduled               pod/monitoring-grafana-f9cdb8c45-pfmdm                      Successfully assigned monitoring/monitoring-grafana-f9cdb8c45-pfmdm to 192.168.0.14
+5m55s       Normal    Pulling                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      Pulling image "swr.cn-north-4.myhuaweicloud.com/cloud_course/k8s-sidecar:2.6.0"
+5m54s       Normal    SuccessfulMountVolume   pod/monitoring-prometheus-node-exporter-zb7bl               Successfully mounted volumes for pod "monitoring-prometheus-node-exporter-zb7bl_monitoring(af4fa910-86b5-481f-a8b9-abf6477be1f6)"
+5m54s       Normal    SuccessfulCreate        pod/monitoring-prometheus-node-exporter-s8fqz               Container created
+5m54s       Normal    Pulled                  pod/monitoring-prometheus-node-exporter-s8fqz               Successfully pulled image "swr.cn-north-4.myhuaweicloud.com/cloud_course/node-exporter:v1.11.1" in 1.406s (1.406s including waiting). Image size: 13307412 bytes.
+5m54s       Normal    Pulled                  pod/monitoring-prometheus-node-exporter-zb7bl               Successfully pulled image "swr.cn-north-4.myhuaweicloud.com/cloud_course/node-exporter:v1.11.1" in 1.451s (1.451s including waiting). Image size: 13307412 bytes.
+5m54s       Normal    Started                 pod/monitoring-prometheus-node-exporter-s8fqz               Container started
+5m54s       Normal    SuccessfulCreate        pod/monitoring-prometheus-node-exporter-zb7bl               Container created
+5m54s       Normal    Started                 pod/monitoring-prometheus-node-exporter-zb7bl               Container started
+5m54s       Normal    Healthy                 pod/monitoring-prometheus-node-exporter-zb7bl               container containerd://671e37a76977ed30854857b7e7e96b155f7216ecea23b2f2febefc26f6ae7adc in health status
+5m53s       Normal    Healthy                 pod/monitoring-prometheus-node-exporter-s8fqz               container containerd://bd7a777d7b30f411ba6f0fe8891b8d97264567d3d0f32aa63d9b588d477b6ec3 in health status
+5m53s       Normal    Started                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container started
+5m53s       Normal    Pulled                  pod/monitoring-grafana-f9cdb8c45-pfmdm                      Successfully pulled image "swr.cn-north-4.myhuaweicloud.com/cloud_course/k8s-sidecar:2.6.0" in 2.119s (2.119s including waiting). Image size: 28444892 bytes.
+5m53s       Normal    SuccessfulCreate        pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container created
+5m53s       Normal    Started                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container started
+5m53s       Normal    Pulled                  pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container image "swr.cn-north-4.myhuaweicloud.com/cloud_course/k8s-sidecar:2.6.0" already present on machine and can be accessed by the pod
+5m53s       Normal    SuccessfulCreate        pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container created
+5m53s       Normal    SuccessfulMountVolume   pod/monitoring-prometheus-node-exporter-s8fqz               Successfully mounted volumes for pod "monitoring-prometheus-node-exporter-s8fqz_monitoring(02e5cf08-4730-409f-ade2-da93f09a790c)"
+5m53s       Normal    Pulling                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      Pulling image "swr.cn-north-4.myhuaweicloud.com/cloud_course/grafana:12.4.3"
+5m42s       Normal    Pulled                  pod/monitoring-grafana-f9cdb8c45-pfmdm                      Successfully pulled image "swr.cn-north-4.myhuaweicloud.com/cloud_course/grafana:12.4.3" in 11.244s (11.244s including waiting). Image size: 287105747 bytes.
+5m42s       Normal    SuccessfulCreate        pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container created
+5m42s       Normal    Started                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      Container started
+5m41s       Normal    SuccessfulMountVolume   pod/monitoring-grafana-f9cdb8c45-pfmdm                      Successfully mounted volumes for pod "monitoring-grafana-f9cdb8c45-pfmdm_monitoring(288908f5-5a0d-4c6d-a51c-425293ac6b9c)"
+5m40s       Warning   Unhealthy               pod/monitoring-grafana-f9cdb8c45-pfmdm                      Readiness probe failed: Get "http://10.0.0.24:3000/api/health": dial tcp 10.0.0.24:3000: connect: connection refused
+5m30s       Normal    Healthy                 pod/monitoring-grafana-f9cdb8c45-pfmdm                      container containerd://6e22fef6f5a130524459e14286fb560c7c985ba3b08f942c5916f594dddc80f5 in health status
+106s        Warning   FailedMount             pod/monitoring-kube-prometheus-operator-66c9c9849c-lsbzg    MountVolume.SetUp failed for volume "tls-secret" : secret "monitoring-kube-prometheus-admission" not found

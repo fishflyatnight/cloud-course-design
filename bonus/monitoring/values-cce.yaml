@@ -1,0 +1,106 @@
+grafana:
+  enabled: true
+  grafana.ini:
+    auth.anonymous:
+      enabled: true
+      org_role: Viewer
+  admin:
+    existingSecret: monitoring-grafana-admin
+    userKey: admin-user
+    passwordKey: admin-password
+  service:
+    type: ClusterIP
+  image:
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: cloud_course/grafana
+    tag: "12.4.3"
+  initChownData:
+    enabled: false
+  sidecar:
+    image:
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: cloud_course/k8s-sidecar
+      tag: "2.6.0"
+
+prometheus:
+  enabled: true
+  service:
+    type: ClusterIP
+  prometheusSpec:
+    retention: 1d
+    resources:
+      requests:
+        cpu: 100m
+        memory: 512Mi
+      limits:
+        cpu: 500m
+        memory: 1Gi
+    image:
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: cloud_course/prometheus
+      tag: "v3.11.2"
+
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    resources:
+      requests:
+        cpu: 20m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
+    image:
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: cloud_course/alertmanager
+      tag: "v0.32.0"
+
+prometheusOperator:
+  tls:
+    enabled: false
+  admissionWebhooks:
+    enabled: false
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 300m
+      memory: 512Mi
+  image:
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: cloud_course/prometheus-operator
+    tag: "v0.90.1"
+  prometheusDefaultBaseImageRegistry: swr.cn-north-4.myhuaweicloud.com
+  prometheusDefaultBaseImage: cloud_course/prometheus
+  admissionWebhooks:
+    patch:
+      image:
+        registry: swr.cn-north-4.myhuaweicloud.com
+        repository: cloud_course/kube-webhook-certgen
+        tag: "1.8.1"
+  prometheusConfigReloader:
+    image:
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: cloud_course/prometheus-config-reloader
+      tag: "v0.90.1"
+
+kubeStateMetrics:
+  enabled: false
+
+prometheus-node-exporter:
+  resources:
+    requests:
+      cpu: 20m
+      memory: 32Mi
+    limits:
+      cpu: 200m
+      memory: 128Mi
+  image:
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: cloud_course/node-exporter
+    tag: "v1.11.1"
+
+global:
+  imagePullSecrets:
+    - name: swr-pull-secret

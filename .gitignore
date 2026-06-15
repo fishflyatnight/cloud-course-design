@@ -1,4 +1,5 @@
 .env
+.ci-tools/
 *.kubeconfig
 kubeconfig
 kubeconfig.yaml
